@@ -78,26 +78,7 @@ export default function Page() {
       </motion.p>
 
       {/* === MAPA EMBEBIDO === */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="w-[90%] md:w-[70%] lg:w-[60%] mb-12 shadow-lg rounded-2xl overflow-hidden border border-[#0C3E33]/20"
-      >
-        <iframe
-          title="Ubicación La Providencia"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.42525350122747!2d-65.63064083088548!3d-29.36519154232293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6f8aeaed2ee121e!2sPosada%20y%20Resto-Bar%20La%20Providencia!5e0!3m2!1ses!2sar!4v1730590000000!5m2!1ses!2sar"
-          width="100%"
-          height="250"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <div className="bg-[#0C3E33]/10 text-[#0C3E33] py-2 text-center text-sm flex items-center justify-center gap-2">
-          <MapPin size={16} /> Posada “La Providencia” — Sanagasta
-        </div>
-      </motion.div>
+      
 
       {/* === CONTENEDOR PRINCIPAL === */}
       <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl min-h-[85vh] rounded-3xl overflow-hidden shadow-2xl border border-white/30 backdrop-blur-sm">
@@ -216,7 +197,28 @@ export default function Page() {
             </div>
           </div>
         </div>
+        
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="w-[90%] md:w-[70%] lg:w-[60%] mb-13 shadow-lg rounded-2xl overflow-hidden border border-[#0C3E33]/20"
+      >
+        <iframe
+          title="Ubicación La Providencia"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.42525350122747!2d-65.63064083088548!3d-29.36519154232293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6f8aeaed2ee121e!2sPosada%20y%20Resto-Bar%20La%20Providencia!5e0!3m2!1ses!2sar!4v1730590000000!5m2!1ses!2sar"
+          width="100%"
+          height="250"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div className="bg-[#0C3E33]/10 text-[#0C3E33] py-2 text-center text-sm flex items-center justify-center gap-2">
+          <MapPin size={16} /> Posada “La Providencia” — Sanagasta
+        </div>
+      </motion.div>
     </main>
   );
 }
