@@ -10,7 +10,7 @@ export default function Programa() {
     },
     { hora: "13:30", titulo: "Almuerzo – Café" },
     {
-      hora: "15:15",
+      hora: "14:30",
       titulo: "Dinámica de trabajo: el espíritu de San Josemaría y el acompañamiento espiritual",
     },
     {

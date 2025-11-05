@@ -30,7 +30,7 @@ export default function Page() {
     },
     { hora: "13:30", texto: "Almuerzo y café", icono: <Utensils size={18} /> },
     {
-      hora: "15:15",
+      hora: "14:30",
       texto:
         "Dinámica: el espíritu de San Josemaría y el acompañamiento espiritual",
       icono: <Users size={18} />,
