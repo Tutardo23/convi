@@ -116,87 +116,37 @@ export default function Page() {
           </div>
         </div>
 
-        {/* === COLUMNA DERECHA: FORMULARIO === */}
-        <div className="bg-[#0C3E33] text-white flex flex-col justify-center items-center px-8 md:px-12 py-10">
-          <div className="w-full max-w-sm">
-            <h2 className="text-2xl font-semibold text-center mb-6">
-              Inscripción
-            </h2>
+        {/* === COLUMNA DERECHA: FORMULARIO CERRADO === */}
+<div className="bg-[#0C3E33] text-white flex flex-col justify-center items-center px-8 md:px-12 py-10">
+  <div className="w-full max-w-sm text-center">
+    <h2 className="text-2xl font-semibold mb-4">
+      Inscripciones cerradas
+    </h2>
+    <p className="text-white/80 text-sm leading-relaxed">
+      Ya no estamos recibiendo nuevas inscripciones para la convivencia.
+      <br />
+      Muchas gracias por tu interés 🙏
+    </p>
 
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const data = Object.fromEntries(
-                  new FormData(e.currentTarget).entries()
-                );
+    <div className="mt-10 bg-white/15 border border-white/30 rounded-2xl p-4 text-center shadow-inner">
+      <p className="text-lg font-bold mb-2 text-[#BFEFE2]">
+        💵 Costo de la jornada:
+        <span className="text-white"> $10.000</span>
+      </p>
+      <p className="text-sm text-[#C7EDE1]">
+        Incluye material de trabajo, almuerzo y bebida.
+      </p>
+      <p className="mt-3 text-sm text-white">
+        Alias para transferencia:
+        <br />
+        <span className="font-mono text-base tracking-wide text-white/90">
+          CLUB.TORRENTES.YBTUC
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
 
-                try {
-                  await fetch(
-                    "https://script.google.com/macros/s/AKfycbxVYiMD7hemMU52wEbn8DS7-fCvPO6ZLCP0yylFUuyNz1q8RPsCeA7CtIjofx5wYV9x/exec",
-                    {
-                      method: "POST",
-                      mode: "no-cors",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify(data),
-                    }
-                  );
-                  alert("✅ Inscripción enviada correctamente");
-                  (e.target as HTMLFormElement).reset();
-                } catch (error) {
-                  alert("❌ Error al conectar con Google Sheets");
-                }
-              }}
-              className="flex flex-col gap-5"
-            >
-              {[
-                { label: "Nombre", name: "nombre" },
-                { label: "Apellido", name: "apellido" },
-                { label: "Celular", name: "celular" },
-                { label: "Email", name: "email" },
-              ].map((campo) => (
-                <div key={campo.name} className="relative">
-                  <input
-                    name={campo.name}
-                    type={campo.name === "email" ? "email" : "text"}
-                    required
-                    className="peer w-full bg-transparent border-b border-white/40 py-2 text-sm placeholder-transparent focus:outline-none focus:border-white"
-                    placeholder={campo.label}
-                  />
-                  <label
-                    htmlFor={campo.name}
-                    className="absolute left-0 -top-3.5 text-xs text-white/70 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/60 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-white"
-                  >
-                    {campo.label}
-                  </label>
-                </div>
-              ))}
-
-              <button
-                type="submit"
-                className="mt-4 bg-white text-[#0C3E33] font-semibold py-3 rounded-full shadow-md hover:bg-[#E6FAF1] transition-all"
-              >
-                Enviar inscripción
-              </button>
-            </form>
-
-            <div className="mt-10 bg-white/15 border border-white/30 rounded-2xl p-4 text-center shadow-inner">
-              <p className="text-lg font-bold mb-2 text-[#BFEFE2]">
-                💵 Costo de la jornada:
-                <span className="text-white"> $10.000</span>
-              </p>
-              <p className="text-sm text-[#C7EDE1]">
-                Incluye material de trabajo, almuerzo y bebida.
-              </p>
-              <p className="mt-3 text-sm text-white">
-                Alias para transferencia:
-                <br />
-                <span className="font-mono text-base tracking-wide text-white/90">
-                  CLUB.TORRENTES.YBTUC
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
         
       </div>
       <motion.div
